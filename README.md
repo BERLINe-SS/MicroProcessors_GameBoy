@@ -43,7 +43,7 @@ The central hub for game selection, featuring colorful icons for each available 
 
 Navigate a growing snake to collect food while avoiding collisions with walls and its own tail.
 
-![Snake Game 1](https://i.imgur.com/wkV8HZw.jpg)
+![Snake Game 1](https://i.imgur.com/hMgbUD1.jpeg)
 ![Snake Game 2](https://i.imgur.com/ZqfjXCZ.jpg)
 
 ### Ping Pong
