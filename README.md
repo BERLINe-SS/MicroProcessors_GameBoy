@@ -1,6 +1,5 @@
 # GameBoy Advance Emulator on STM32
 
-![GameBoy Banner](https://raw.githubusercontent.com/BERLINe-SS/readme-assets/main/GameBoy-Banner.jpg)
 
 A retro gaming platform built using ARM assembly language and STM32 microcontroller. This project implements several classic arcade games displayed on a TFT screen, creating a portable gaming experience similar to the original GameBoy.
 
@@ -30,7 +29,6 @@ This project is an implementation of a GameBoy-inspired gaming console using the
 - TFT display interface with vibrant colors
 - Multiple classic arcade games
 - Intuitive menu navigation system
-- Battery level indicator
 - Efficient assembly language implementation
 
 ## 🎯 Games
@@ -39,7 +37,7 @@ This project is an implementation of a GameBoy-inspired gaming console using the
 
 The central hub for game selection, featuring colorful icons for each available game.
 
-![Main Menu](https://i.imgur.com/nO8TXpB.jpg)
+![Main Menu]("D:\CMP\1st year\2nd term\Microprocessors\WhatsApp Image 2025-05-12 at 18.28.06_3b6f9930.jpg")
 
 ### Snake Game
 
