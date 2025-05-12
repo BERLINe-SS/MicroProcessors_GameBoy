@@ -21,7 +21,10 @@ A retro gaming platform built using ARM assembly language and STM32 microcontrol
 
 ## 🎮 Project Overview
 
-This project is an implementation of a GameBoy-inspired gaming console using the STM32 microcontroller and a TFT display. The games are written in ARM assembly language for optimal performance and low-level hardware control. The system features multiple classic arcade games that can be selected from a main menu interface.
+This project is an implementation of a GameBoy-inspired gaming console using the STM32 microcontroller and a TFT display.
+This Project uses parallel comunication between the TFT screen and STM32 microcontroller.
+The games are written in ARM assembly language for optimal performance and low-level hardware control. 
+The system features multiple classic arcade games that can be selected from a main menu interface.
 
 ## ✨ Features
 
@@ -37,40 +40,42 @@ This project is an implementation of a GameBoy-inspired gaming console using the
 
 The central hub for game selection, featuring colorful icons for each available game.
 
-![Main Menu]("(https://i.imgur.com/MSO2JDV.jpeg)")
+![Main Menu](https://i.imgur.com/0VXgGLx.jpeg)
 
 ### Snake Game
 
-Navigate a growing snake to collect food while avoiding collisions with walls and its own tail.
+Navigate a growing snake to collect food while avoiding collisions with its own tail.
+The snake can wrap around the screen borders.
 
 ![Snake Game 1](https://i.imgur.com/hMgbUD1.jpeg)
-![Snake Game 2](https://i.imgur.com/ZqfjXCZ.jpg)
+![Snake Game 2](https://i.imgur.com/475TXX2.jpeg)
 
 ### Ping Pong
 
 The classic table tennis simulation where players control paddles to hit a ball back and forth.
 
-![Ping Pong 1](https://i.imgur.com/V79DFJM.jpg)
-![Ping Pong 2](https://i.imgur.com/3UOq1mS.jpg)
+![Ping Pong 1](https://i.imgur.com/Ugj69GT.jpeg)
+![Ping Pong 2](https://i.imgur.com/70fYQ8F.jpeg)
 
 ### Brick Breaker
 
 Use a paddle to direct a bouncing ball to break all the bricks in a level.
 
-![Brick Breaker 1](https://i.imgur.com/lkn4M92.jpg)
-![Brick Breaker 2](https://i.imgur.com/6JwIiQZ.jpg)
+![Brick Breaker 1](https://i.imgur.com/tGalsLF.jpeg)
+![Brick Breaker 2](https://i.imgur.com/0AkuJnA.jpeg)
 
 ### Tic-Tac-Toe
 
 The classic paper-and-pencil game implemented digitally with X's and O's.
 
-![Tic-Tac-Toe](https://i.imgur.com/iiOeIeR.jpg)
+![Tic-Tac-Toe](https://i.imgur.com/JV9mgjJ.jpeg)
 
 ### Flappy Bird
 
 Navigate a bird through pipes by tapping to make it flap its wings and gain altitude.
 
-![Flappy Bird](https://i.imgur.com/xZGW4G1.jpg)
+![Flappy Bird 1](https://i.imgur.com/dqVNVBc.jpeg)
+![Flappy Bird 2](https://i.imgur.com/tjZRi5x.jpeg)
 
 ## 🔧 Hardware Requirements
 
@@ -79,12 +84,13 @@ Navigate a bird through pipes by tapping to make it flap its wings and gain alti
 - Input Buttons/Controller
 - Breadboard and Jumper Wires
 - Power Supply
+- Linker
 
 ## 💻 Software Requirements
 
 - ARM Assembly Development Environment
-- STM32CubeIDE or equivalent
-- Serial Communication Tools
+- Keil uVision5
+- parallel Communication Tools
 
 ## 📥 Installation
 
@@ -93,7 +99,7 @@ Navigate a bird through pipes by tapping to make it flap its wings and gain alti
 git clone https://github.com/BERLINe-SS/MicroProcessors_GameBoy.git
 ```
 
-2. Open the project in STM32CubeIDE or your preferred ARM development environment.
+2. Open the project in Keil uVision5 or your preferred ARM development environment.
 
 3. Compile the code and flash it to your STM32 microcontroller.
 
@@ -103,7 +109,7 @@ git clone https://github.com/BERLINe-SS/MicroProcessors_GameBoy.git
 
 ## 👥 Team Members
 
-Our project was developed by a dedicated team of engineers:
+Our project was developed by:
 
 - [Ibrahim Abohola](https://github.com/Ibrahim-Abohola)
 - [Ahmed Gamal Seif](https://github.com/ahmedgamalseif)
@@ -114,11 +120,6 @@ Our project was developed by a dedicated team of engineers:
 - [BERLINe-SS](https://github.com/BERLINe-SS)
 - [Ebraam Ashraf](https://github.com/Ebraam-Ashraf)
 
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/BERLINe-SS/readme-assets/main/GameBoy-Footer.jpg" alt="GameBoy Footer" width="300">
