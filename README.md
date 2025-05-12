@@ -37,7 +37,7 @@ This project is an implementation of a GameBoy-inspired gaming console using the
 
 The central hub for game selection, featuring colorful icons for each available game.
 
-![Main Menu]("D:\CMP\1st year\2nd term\Microprocessors\WhatsApp Image 2025-05-12 at 18.28.06_3b6f9930.jpg")
+![Main Menu]("(https://i.imgur.com/MSO2JDV.jpeg)")
 
 ### Snake Game
 
