@@ -120,11 +120,3 @@ Our project was developed by:
 - [BERLINe-SS](https://github.com/BERLINe-SS)
 - [Ebraam Ashraf](https://github.com/Ebraam-Ashraf)
 
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/BERLINe-SS/readme-assets/main/GameBoy-Footer.jpg" alt="GameBoy Footer" width="300">
-</p>
-
-<p align="center">
-  Made with ❤️ by the STM32 GameBoy Team
-</p>
