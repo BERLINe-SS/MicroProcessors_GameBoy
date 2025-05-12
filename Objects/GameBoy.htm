@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\GameBoy.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\GameBoy.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6230001: Last Updated: Mon May 12 01:16:29 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6230001: Last Updated: Mon May 12 16:49:06 2025
 <BR><P>
 <H3>Maximum Stack Usage =          0 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -12,19 +12,21 @@ Call chain for Maximum Stack Depth:</H3>
 <H3>
 Functions with no stack information
 </H3><UL>
- <LI><a href="#[55]">__user_initial_stackheap</a>
- <LI><a href="#[4d]">TFT_FillScreen</a>
- <LI><a href="#[4a]">TFT_WriteCommand</a>
- <LI><a href="#[4b]">TFT_WriteData</a>
+ <LI><a href="#[57]">__user_initial_stackheap</a>
+ <LI><a href="#[4a]">GAME_BOY_LOOP</a>
+ <LI><a href="#[4e]">TFT_FillScreen</a>
+ <LI><a href="#[4b]">TFT_WriteCommand</a>
+ <LI><a href="#[4c]">TFT_WriteData</a>
+ <LI><a href="#[4f]">TFT_DrawImage</a>
  <LI><a href="#[49]">CONFIG</a>
- <LI><a href="#[4c]">TFT_Init</a>
- <LI><a href="#[4e]">TFT_DrawObsticle_Down_1</a>
- <LI><a href="#[4f]">TFT_ReDrawObsticle_Down_1</a>
- <LI><a href="#[52]">TFT_DrawObsticle_Top_1</a>
- <LI><a href="#[53]">TFT_ReDrawObsticle_Top_1</a>
- <LI><a href="#[54]">TFT_DrawSquare</a>
- <LI><a href="#[50]">Move_right_D</a>
- <LI><a href="#[51]">Move_left_D</a>
+ <LI><a href="#[4d]">TFT_Init</a>
+ <LI><a href="#[50]">TFT_DrawObsticle_Down_1</a>
+ <LI><a href="#[51]">TFT_ReDrawObsticle_Down_1</a>
+ <LI><a href="#[54]">TFT_DrawObsticle_Top_1</a>
+ <LI><a href="#[55]">TFT_ReDrawObsticle_Top_1</a>
+ <LI><a href="#[56]">TFT_DrawSquare</a>
+ <LI><a href="#[52]">Move_right_D</a>
+ <LI><a href="#[53]">Move_left_D</a>
 </UL>
 </UL>
 <P>
@@ -356,180 +358,200 @@ Global Symbols
 <P><STRONG><a name="[a]"></a>WWDG_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f401xc.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(RESET)
 </UL>
-<P><STRONG><a name="[55]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_stm32f401xc.o(.text), UNUSED)
+<P><STRONG><a name="[57]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_stm32f401xc.o(.text), UNUSED)
 
-<P><STRONG><a name="[56]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[58]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[57]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[59]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[58]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[5a]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[59]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 302 bytes, Stack size 24 bytes, system_stm32f4xx.o(.text.SystemCoreClockUpdate), UNUSED)
+<P><STRONG><a name="[5b]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 302 bytes, Stack size 24 bytes, system_stm32f4xx.o(.text.SystemCoreClockUpdate), UNUSED)
 
 <P><STRONG><a name="[42]"></a>SystemInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, system_stm32f4xx.o(.text.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(.text)
 </UL>
 <P><STRONG><a name="[43]"></a>__main</STRONG> (Thumb, 1022 bytes, Stack size 0 bytes, gameboymain.o(MYCODE))
 <BR><BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;snake
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
 <LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__xogame
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FlappyBird
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f401xc.o(.text)
 </UL>
-<P><STRONG><a name="[4d]"></a>TFT_FillScreen</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gameboymain.o(MYCODE))
+<P><STRONG><a name="[4a]"></a>GAME_BOY_LOOP</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gameboymain.o(MYCODE))
+<BR><BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Top_1
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;snake
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
+<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__xogame
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FlappyBird
+</UL>
+
+<P><STRONG><a name="[4e]"></a>TFT_FillScreen</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gameboymain.o(MYCODE))
 <BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;snake
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FlappyBird
 </UL>
 
-<P><STRONG><a name="[4a]"></a>TFT_WriteCommand</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gameboymain.o(MYCODE))
-<BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Move_right_D
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Move_left_D
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawSquare
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Top_1
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Down_1
+<P><STRONG><a name="[4b]"></a>TFT_WriteCommand</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gameboymain.o(MYCODE))
+<BR><BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Move_right_D
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Move_left_D
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawSquare
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Top_1
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Down_1
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;snake
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
 <LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__xogame
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FlappyBird
 </UL>
 
-<P><STRONG><a name="[4b]"></a>TFT_WriteData</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gameboymain.o(MYCODE))
-<BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Move_right_D
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Move_left_D
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawSquare
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Top_1
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Down_1
+<P><STRONG><a name="[4c]"></a>TFT_WriteData</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gameboymain.o(MYCODE))
+<BR><BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Move_right_D
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Move_left_D
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawSquare
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Top_1
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Down_1
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;snake
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
 <LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__xogame
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FlappyBird
+</UL>
+
+<P><STRONG><a name="[4f]"></a>TFT_DrawImage</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gameboymain.o(MYCODE))
+<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;snake
 </UL>
 
 <P><STRONG><a name="[49]"></a>CONFIG</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gameboymain.o(MYCODE))
 <BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;snake
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
 <LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__xogame
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FlappyBird
 </UL>
 
-<P><STRONG><a name="[4c]"></a>TFT_Init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gameboymain.o(MYCODE))
+<P><STRONG><a name="[4d]"></a>TFT_Init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, gameboymain.o(MYCODE))
 <BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;snake
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
-<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
+<LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bricks
+<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PingPong
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FlappyBird
 </UL>
 
-<P><STRONG><a name="[48]"></a>__xogame</STRONG> (Thumb, 2476 bytes, Stack size 0 bytes, x_ogame.o(MYCODE))
+<P><STRONG><a name="[48]"></a>__xogame</STRONG> (Thumb, 2484 bytes, Stack size 0 bytes, x_ogame.o(MYCODE))
 <BR><BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CONFIG
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAME_BOY_LOOP
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[44]"></a>snake</STRONG> (Thumb, 1496 bytes, Stack size 0 bytes, snakecode.o(MYCODE))
-<BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
+<P><STRONG><a name="[44]"></a>snake</STRONG> (Thumb, 1510 bytes, Stack size 0 bytes, snakecode.o(MYCODE))
+<BR><BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
 <LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CONFIG
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_FillScreen
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawImage
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_FillScreen
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAME_BOY_LOOP
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[45]"></a>bricks</STRONG> (Thumb, 1726 bytes, Stack size 0 bytes, bricks.o(MYCODE))
-<BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
+<P><STRONG><a name="[47]"></a>bricks</STRONG> (Thumb, 1750 bytes, Stack size 0 bytes, bricks.o(MYCODE))
+<BR><BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
 <LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CONFIG
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_FillScreen
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_FillScreen
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAME_BOY_LOOP
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[4e]"></a>TFT_DrawObsticle_Down_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func.o(MYCODE))
-<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
+<P><STRONG><a name="[50]"></a>TFT_DrawObsticle_Down_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func.o(MYCODE))
+<BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Down_1
+<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Down_1
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FlappyBird
 </UL>
 
-<P><STRONG><a name="[4f]"></a>TFT_ReDrawObsticle_Down_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func.o(MYCODE))
-<BR><BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Move_right_D
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Move_left_D
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Down_1
+<P><STRONG><a name="[51]"></a>TFT_ReDrawObsticle_Down_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func.o(MYCODE))
+<BR><BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Move_right_D
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Move_left_D
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Down_1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FlappyBird
 </UL>
 
-<P><STRONG><a name="[52]"></a>TFT_DrawObsticle_Top_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func.o(MYCODE))
-<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
+<P><STRONG><a name="[54]"></a>TFT_DrawObsticle_Top_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func.o(MYCODE))
+<BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
 </UL>
-<BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Top_1
+<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Top_1
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FlappyBird
 </UL>
 
-<P><STRONG><a name="[53]"></a>TFT_ReDrawObsticle_Top_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func.o(MYCODE))
-<BR><BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawSquare
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Top_1
+<P><STRONG><a name="[55]"></a>TFT_ReDrawObsticle_Top_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func.o(MYCODE))
+<BR><BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawSquare
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Top_1
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAME_BOY_LOOP
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FlappyBird
 </UL>
 
-<P><STRONG><a name="[47]"></a>PingPong</STRONG> (Thumb, 1632 bytes, Stack size 0 bytes, pingpong.o(MyCode))
-<BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
+<P><STRONG><a name="[45]"></a>PingPong</STRONG> (Thumb, 1652 bytes, Stack size 0 bytes, pingpong.o(MyCode))
+<BR><BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
 <LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CONFIG
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_FillScreen
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_FillScreen
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAME_BOY_LOOP
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[46]"></a>FlappyBird</STRONG> (Thumb, 598 bytes, Stack size 0 bytes, test.o(Mycode))
-<BR><BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Top_1
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Down_1
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawSquare
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Top_1
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Down_1
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
+<P><STRONG><a name="[46]"></a>FlappyBird</STRONG> (Thumb, 620 bytes, Stack size 0 bytes, test.o(Mycode))
+<BR><BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Top_1
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Down_1
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawSquare
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Top_1
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_DrawObsticle_Down_1
+<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
 <LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CONFIG
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_FillScreen
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_FillScreen
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GAME_BOY_LOOP
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[54]"></a>TFT_DrawSquare</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func2.o(mycode))
-<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
+<P><STRONG><a name="[56]"></a>TFT_DrawSquare</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func2.o(mycode))
+<BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
 </UL>
-<BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Top_1
+<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Top_1
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FlappyBird
 </UL>
 
-<P><STRONG><a name="[50]"></a>Move_right_D</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func2.o(mycode))
-<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
+<P><STRONG><a name="[52]"></a>Move_right_D</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func2.o(mycode))
+<BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Down_1
+<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Down_1
 </UL>
 
-<P><STRONG><a name="[51]"></a>Move_left_D</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func2.o(mycode))
-<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
-<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
+<P><STRONG><a name="[53]"></a>Move_left_D</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, func2.o(mycode))
+<BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteData
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_WriteCommand
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Down_1
+<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_ReDrawObsticle_Down_1
 </UL>
 <P>
 <H3>

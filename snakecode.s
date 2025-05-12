@@ -2,8 +2,11 @@
 	IMPORT 	TFT_Init
 	IMPORT TFT_FillScreen
 	IMPORT TFT_WriteCommand	
-	IMPORT TFT_WriteData	
+	IMPORT TFT_WriteData
+	IMPORT  TFT_DrawImage
+	IMPORT  apple
 	IMPORT CONFIG
+	IMPORT  GAME_BOY_LOOP
 
 
 	AREA MYDATA, DATA, READWRITE
@@ -144,9 +147,10 @@ SKIP_THIS
 	SUB R2,R2,#2
 	MOV R6,#0
 	LDRH R6,[R0,R2]
-	MOV R2,#20      ; LENGTH
-	MOV R1,#Green
-	BL TFT_DrawSquare
+	SUB R1,R5,#20
+	SUB R2,R6,#20
+	LDR R3,=apple
+	BL TFT_DrawImage
 	
 	; need to move that to green square
 
@@ -185,13 +189,13 @@ CHECK_LOSE
 	LDR R1, =TAIL
 	MOV R2,#0
 	LDRB R2,[R1]
+	CMP R2,#2
+	BLT RETURN 
 	BL GET_HEAD
 CHECK_COLLISION_LOOP
 	LDR R0,=SNAKE
 	MOV R8,#0
 	MOV R9,#0
-	CMP R2,#0
-	BEQ NOT
 	MOV R10,R2
 	SUB R2,R2,#1
 	MOV R10,R10,LSL #2
@@ -213,6 +217,18 @@ RETURN
 	BL delay
 	B MAIN_LOOP
 END_GAME
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	
+	B GAME_BOY_LOOP
     B .
 
 
@@ -304,7 +320,6 @@ MOVE_RIGHT
 	BL delay
 	BL delay
 	BL delay
-	BL delay
 	BL GET_HEAD
 	ADD R6,R6,#20
 	MOV R1,R3
@@ -315,11 +330,9 @@ MOVE_RIGHT
 	BL delay
 	BL delay
 	BL delay
-	BL delay
 	B SKIP
 MOVE_LEFT
 	BL REMOVE_TAIL
-	BL delay
 	BL delay
 	BL delay
 	BL delay
@@ -334,11 +347,9 @@ MOVE_LEFT
 	 BL delay
 	 BL delay
 	 BL delay
-	 BL delay
 	B SKIP
 MOVE_DOWN
 	BL REMOVE_TAIL
-	BL delay
 	BL delay
 	BL delay
 	BL delay
@@ -353,11 +364,9 @@ MOVE_DOWN
 	BL delay
 	BL delay
 	BL delay
-	BL delay
 	B SKIP
 MOVE_UP
 	BL REMOVE_TAIL
-	BL delay
 	BL delay
 	BL delay
 	BL delay
@@ -368,8 +377,6 @@ MOVE_UP
 	BL MOVE
 	BL MODIFY_HEAD
 	BL TFT_DrawSquare
-	BL delay
-	BL delay
 	BL delay
 	BL delay
 	BL delay
@@ -512,25 +519,25 @@ CHECK_BOUNDRY
 	B ENDCHECK
 OUT_Y
 	BL TFT_DrawSquare
-	MOV R5,#260
+	MOV R5,#240
 	MOV R1,R3
 	BL TFT_DrawSquare
 	B ENDCHECK
 OUT_Y2
 	BL TFT_DrawSquare
-	MOV R5,#0
+	MOV R5,#1
 	MOV R1,R3
 	BL TFT_DrawSquare
 	B ENDCHECK
 OUT_X
 	BL TFT_DrawSquare
-	MOV R6,#340
+	MOV R6,#320
 	MOV R1,R3
 	BL TFT_DrawSquare
 	B ENDCHECK
 OUT_X2
 	BL TFT_DrawSquare
-	MOV R6,#0
+	MOV R6,#1
 	MOV R1,R3
 	BL TFT_DrawSquare
 ENDCHECK
@@ -583,7 +590,7 @@ ADD_RIGHT
 	ADDS R6,R2,#20 ;;; X = X OF TAIL - 20
 	B END_ADD
 ADD_UP
-	MOV R6,R2  ;;; X = X OF TAIL
+	MOV R6,R1  ;;; X = X OF TAIL
 	ADDS R5,R2,#20 ;;; Y = Y OF TAIL + 20 
 	B END_ADD
 ADD_DOWN
@@ -653,9 +660,10 @@ EAT
 	SUB R2,R2,#2
 	MOV R6,#0
 	LDRH R6,[R0,R2]
-	MOV R2,#20      ; LENGTH
-	MOV R1,#Green
-	BL TFT_DrawSquare
+	SUB R1,R5,#20
+	SUB R2,R6,#20
+	LDR R3,=apple
+	BL TFT_DrawImage
 	   
 Continue
     

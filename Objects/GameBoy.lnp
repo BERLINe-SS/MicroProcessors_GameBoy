@@ -13,6 +13,8 @@
 ".\objects\test.o"
 ".\objects\func.o"
 ".\objects\func2.o"
+".\objects\apple.o"
+".\objects\bird.o"
 ".\objects\startup_stm32f401xc.o"
 ".\objects\system_stm32f4xx.o"
 --strict --scatter ".\Objects\GameBoy.sct"

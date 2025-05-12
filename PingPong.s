@@ -6,6 +6,7 @@
 	IMPORT TFT_WriteData	
 	IMPORT CONFIG
 	IMPORT 	TFT_Init
+	IMPORT  GAME_BOY_LOOP
 
         AREA    MyData, DATA, READWRITE
 
@@ -202,9 +203,7 @@ START_PING_PONG
 MAIN_LOOP	
 	BL PING_PONG_MOVE_PLAYERS
 	BL delay
-
 	BL BALL_CHECK_MOVE
-	BL delay
 
 	
 CHECK_PLAYER_1_WIN
@@ -221,7 +220,12 @@ CHECK_PLAYER_2_WIN
 	B MAIN_LOOP
 	
 END_PING_GAME
-
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	B GAME_BOY_LOOP
     B .
 
 
@@ -536,7 +540,7 @@ PING_PONG_READ_KEYS
     LDR R2, [R1]               ; Read the value from GPIOB input data register
 
     ; Check each key pin (PB5-PB8)
-    TST R2, #(1 << 5)         ; Test key5 (PB0) bit
+    TST R2, #(1 << 8)         ; Test key5 (PB0) bit
     BEQ PING_PONG_CheckKey2              ; If key5 is not pressed, check key6
     MOV R0, #1                 ; If key5 is pressed, return 1
     B PING_PONG_CheckKey3                ; Return
@@ -555,13 +559,13 @@ NoKeyPressedForPlayer1
     ;BX LR 
 
 PING_PONG_CheckKey3
-    TST R2, #(1 << 7)          ; Test key7 (PB2) bit
+    TST R2, #(1 << 5)          ; Test key7 (PB2) bit
     BEQ PING_PONG_CheckKey4              ; If key7 is not pressed, check key8
     MOV R1, #1                  ; If key7 is pressed, return 1
     B END_PING_PONG_READ_KEYS   ; Return
 
 PING_PONG_CheckKey4
-    TST R2, #(1 << 8)          ; Test key8 (PB3) bit
+    TST R2, #(1 << 7)          ; Test key8 (PB3) bit
     BEQ NoKeyPressedForPlayer2           ; If key8 is not pressed, no key is pressed
     MOV R1, #2                 ; If key4 is pressed, return 2
     B END_PING_PONG_READ_KEYS  ; Return

@@ -454,6 +454,16 @@
               <FileType>2</FileType>
               <FilePath>.\func2.s</FilePath>
             </File>
+            <File>
+              <FileName>apple.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\apple.s</FilePath>
+            </File>
+            <File>
+              <FileName>bird.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\bird.s</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
