@@ -13,6 +13,7 @@
 	EXPORT TFT_DrawObsticle_Down_1
 	EXPORT TFT_ReDrawObsticle_Down_1
 	IMPORT TFT_DrawSquare
+	IMPORT  GAME_BOY_LOOP
 
 	;Colors
 Red     	EQU 0xF800  ; 11111 000000 00000
@@ -356,13 +357,24 @@ delay_loop_2
 
 
 Blink_2
+	MOV R12,#0
+BLINK_LOOP2
 	MOV R1,#Black
 	BL TFT_DrawSquare
 	BL delay_func
 	MOV R1,#Pink
 	BL TFT_DrawSquare
+	ADD R12,R12,#1
 	BL delay_func
-	BL Blink_2
+	CMP R12,#10
+	BLT BLINK_LOOP2
+	BL delay_func
+	BL delay_func
+	BL delay_func
+	BL delay_func
+	BL delay_func
+	BL delay_func
+	B GAME_BOY_LOOP
 
 
 	

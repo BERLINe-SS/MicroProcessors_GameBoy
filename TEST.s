@@ -15,6 +15,7 @@
 	IMPORT TFT_DrawObsticle_Down_1
 	IMPORT TFT_ReDrawObsticle_Down_1
 	IMPORT TFT_DrawSquare
+	IMPORT  GAME_BOY_LOOP
     EXPORT FlappyBird
 	
 myArray SPACE 40
@@ -86,12 +87,6 @@ FlappyBird FUNCTION
         LDR R1, =0
         STR R1, [R0], #4
 
-        LDR R1, =240
-        STR R1, [R0], #4
-
-        LDR R1, =60
-        STR R1, [R0], #4
-
         LDR R1, =190
         STR R1, [R0], #4
 
@@ -142,7 +137,7 @@ MAIN_LOOP
 	
 	PUSH{R1}
 	LDR R1, =myArray
-	ADD R1, R1, #40
+	ADD R1, R1, #32
 	CMP R2, R1
 	POP{R1}
 	BNE START
@@ -348,13 +343,24 @@ delay_loop
 
 
 Blink
+	MOV R12,#0
+BLINK_LOOP
 	MOV R1,#Black
 	BL TFT_DrawSquare
 	BL delay
 	MOV R1,#Pink
 	BL TFT_DrawSquare
+	ADD R12,R12,#1
 	BL delay
-	BL Blink
+	CMP R12,#10
+	BLT BLINK_LOOP
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	B GAME_BOY_LOOP
 	
 
 

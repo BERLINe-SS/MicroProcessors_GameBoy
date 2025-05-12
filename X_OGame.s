@@ -22,6 +22,8 @@
 	IMPORT TFT_WriteCommand	
 	IMPORT TFT_WriteData	
 	IMPORT CONFIG
+	IMPORT  GAME_BOY_LOOP
+	IMPORT TFT_Init
 
 	AREA DATA, DATA, READWRITE
 
@@ -75,6 +77,7 @@ GAME_LOOP
     LDRB R0, [R0]
     CMP R0, #0
     BNE RESTART_GAME_CHECK
+	  
     LTORG
  
     LDR R11, =CURRENT_PLAYER
@@ -97,11 +100,17 @@ LTORG
 	
 RESTART_GAME_CHECK
     ; Check if restart button is pressed (using B4/PD4)
-   LDR R3, =GPIOB_BASE + GPIO_IDR
+	
+   
+	
+	LDR R3, =GPIOB_BASE + GPIO_IDR
     LDR R0, [R3]
-    TST R0, #(1 << 4)
+    TST R0, #(1 << 3)
+	;BNE TFT_Init
+    BNE GAME_BOY_LOOP 
+	TST R0, #(1 << 4)
     BEQ RESTART_GAME_CHECK    ; If not pressed, keep looping
-    
+	
     ; If pressed, initialize a new game
     BL INITIALIZE_GAME
     B GAME_LOOP

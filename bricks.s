@@ -5,6 +5,7 @@
 	IMPORT TFT_WriteData	
 	IMPORT CONFIG
 	IMPORT 	TFT_Init
+	IMPORT  GAME_BOY_LOOP
         AREA    MyData, DATA, READWRITE
 
 ; BALL DATA
@@ -248,7 +249,14 @@ MAIN_LOOP
 		
 	B MAIN_LOOP	
 	
-END_BRICKS_GAME	
+END_BRICKS_GAME
+
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	BL delay
+	B GAME_BOY_LOOP
 	B .
 
 

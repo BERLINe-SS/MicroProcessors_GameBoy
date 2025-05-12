@@ -25,7 +25,8 @@
 	EXPORT TFT_WriteCommand	
 	EXPORT TFT_WriteData	
 	EXPORT CONFIG
-		
+	EXPORT TFT_DrawImage
+	EXPORT GAME_BOY_LOOP
 
 ;Colors
 RED     EQU 0xF800  ; 11111 000000 00000
@@ -66,11 +67,12 @@ __main FUNCTION
 
 	BL CONFIG
 	
-    BL TFT_Init
+    
 
 
+GAME_BOY_LOOP
 	
-	
+	BL TFT_Init
 	LDR R0,=ORANGE
 	BL TFT_FillScreen
 	
@@ -191,14 +193,14 @@ FIRSTLINEG
 	
 	CMP   R2,#50
 	BLEQ snake
-	BLNE bricks
+	BLNE PingPong
 
 	B NOCHANGE
 SECONDLINEG
 
 	CMP R2,#50
 	BLEQ FlappyBird
-	BLNE PingPong
+	BLNE bricks
 	B NOCHANGE
 
 THIRDG
